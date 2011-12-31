@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'selenium-runner'
+rescue LoadError
+  $stderr.puts "Could not find selenium_runner"
+  exit(1)
+end
