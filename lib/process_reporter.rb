@@ -4,12 +4,12 @@ class ProcessReporter
     @process_formatter = ProcessFormatter.new
   end
 
-  def report(count)
+  def report(count, seed=nil)
     start(count)
     begin
       yield self
     ensure
-      finish
+      finish(seed)
     end
   end
 

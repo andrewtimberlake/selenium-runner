@@ -34,7 +34,7 @@ class SeleniumRunner
     browsers = [:firefox, :chrome]
     browsers = [:firefox]
 
-    reporter.report(world.example_count) do |reporter|
+    reporter.report(world.example_count, configuration.randomize? ? configuration.seed : nil) do |reporter|
       begin
         configuration.run_hook(:before, :suite)
         mutex = Mutex.new
